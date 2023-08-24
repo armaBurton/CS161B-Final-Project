@@ -42,6 +42,7 @@ void writeToConsole(TireData list[], int count)
 void addTire(TireData list[], int &count)
 {
     char brand[STRLEN], style[STRLEN], position[STRLEN], prompt[STRLEN];
+    char tireSize[STRLEN];
     int width, ratio, diameter;
     double price;
 
@@ -59,6 +60,7 @@ void addTire(TireData list[], int &count)
     getInt(prompt, diameter);
     strcpy(prompt, "Cost: ");
     getDouble(prompt, price);
+    tireSizeBuilder(tireSize, width, ratio, diameter);
     system("pause");
     cout << endl;
 }
@@ -92,4 +94,18 @@ void positionText(char position[], char buffer)
         cout << "You dun fucked up.\n";
         break;
     }
+}
+
+void tireSizeBuilder(char tireSize[], int width, int ratio, int diameter)
+{
+    char temp[STRLEN] = "\0", buffer[STRLEN] = "\0";
+    sprintf(buffer, "%d", width);
+    strcat(temp, buffer);
+    strcat(temp, "/");
+    sprintf(buffer, "%d", ratio);
+    strcat(temp, buffer);
+    strcat(temp, "-");
+    sprintf(buffer, "%d", diameter);
+    strcat(temp, buffer);
+    cout << temp << endl;
 }
