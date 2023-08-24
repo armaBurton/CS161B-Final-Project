@@ -68,8 +68,8 @@ void getInt(char prompt[], int &width)
         cin >> widthBuffer;
         if (cin.fail())
         {
-            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
         }
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cin.clear();
     } while (cin.fail());
 }
