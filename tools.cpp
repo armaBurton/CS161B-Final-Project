@@ -62,14 +62,15 @@ void runOption(TireData list[], int &count, char *option)
 void getInt(char prompt[], int &width)
 {
     int widthBuffer;
-    do
+    cout << prompt;
+    cin >> widthBuffer;
+    while (cin.fail())
     {
-        cout << prompt;
-        cin >> widthBuffer;
-        if (cin.fail())
-        {
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
-        }
         cin.clear();
-    } while (cin.fail());
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cout << "You chose poorly\n"
+             << prompt;
+        cin >> widthBuffer;
+    }
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
 }
