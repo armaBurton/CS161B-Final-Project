@@ -33,8 +33,7 @@ void runOption(TireData list[], int &count, char *option)
     switch (*option)
     {
     case 'a':
-        cout << "option A" << endl;
-        break;
+        addTire(list, count) break;
     case 'r':
         cout << "option R" << endl;
         break;

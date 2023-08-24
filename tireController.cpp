@@ -38,3 +38,11 @@ void writeToConsole(TireData list[], int count)
     system("pause");
     cout << endl;
 }
+
+void addTire(TireData list[], int &count)
+{
+    char brand[STRLEN], style[STRLEN];
+    char position;
+    int width, ratio, diameter;
+    double price;
+}
