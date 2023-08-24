@@ -53,6 +53,12 @@ void addTire(TireData list[], int &count)
     cout << position << endl;
     strcpy(prompt, "Tire Width: ");
     getInt(prompt, width);
+    strcpy(prompt, "Tire Ratio: ");
+    getInt(prompt, ratio);
+    strcpy(prompt, "Tire Diameter: ");
+    getInt(prompt, diameter);
+    strcpy(prompt, "Cost: ");
+    getDouble(prompt, price);
     system("pause");
     cout << endl;
 }
