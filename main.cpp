@@ -17,6 +17,7 @@ int main()
     {
         menu();
         readOption(option);
+        runOption(list, count, option);
     } while (option[0] != 'q');
     return 0;
 }

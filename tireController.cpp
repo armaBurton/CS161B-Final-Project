@@ -34,6 +34,7 @@ void writeToConsole(TireData list[], int count)
              << list[i].style << ";"
              << list[i].price << endl;
     }
-
+    cout << endl;
+    system("pause");
     cout << endl;
 }

@@ -7,3 +7,4 @@ const int LIST = 40;
 void greeting();
 void menu();
 void readOption(char *option);
+void runOption(TireData list[], int &count, char *option);
