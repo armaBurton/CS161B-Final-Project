@@ -33,7 +33,8 @@ void runOption(TireData list[], int &count, char *option)
     switch (*option)
     {
     case 'a':
-        addTire(list, count) break;
+        addTire(list, count);
+        break;
     case 'r':
         cout << "option R" << endl;
         break;
@@ -56,4 +57,19 @@ void runOption(TireData list[], int &count, char *option)
         cout << "You dun fucked up." << endl;
         break;
     }
+}
+
+void getInt(char prompt[], int &width)
+{
+    int widthBuffer;
+    do
+    {
+        cout << prompt;
+        cin >> widthBuffer;
+        if (cin.fail())
+        {
+            cin.clear();
+        }
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    } while (cin.fail());
 }
