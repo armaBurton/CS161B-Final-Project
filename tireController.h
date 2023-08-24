@@ -4,6 +4,8 @@
 #include <fstream>
 #include <iomanip>
 #include <cstring>
+#include <cctype>
+#include <limits>
 
 using namespace std;
 
@@ -18,3 +20,4 @@ struct TireData
 };
 
 bool loadData(TireData list[], int &count);
+void writeToConsole(TireData list[], int count);

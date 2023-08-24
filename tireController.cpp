@@ -4,6 +4,7 @@
 bool loadData(TireData list[], int &count)
 {
     ifstream infile;
+    infile.open("tires.txt");
     if (!infile)
     {
         cout << "File did not open. Program exiting.\n";
@@ -15,10 +16,24 @@ bool loadData(TireData list[], int &count)
         infile.getline(list[count].brand, MAXLEN, ';');
         infile.getline(list[count].style, MAXLEN, ';');
         infile >> list[count].price;
-        infile.ignore(100, '\n');
+        infile.ignore(5, '\n');
         count++;
     }
     infile.close();
 
     return true;
+}
+
+void writeToConsole(TireData list[], int count)
+{
+    for (int i = 0; i < count; i++)
+    {
+        cout << "0" << i + 1 << ": "
+             << list[i].dimensions << ";"
+             << list[i].brand << ";"
+             << list[i].style << ";"
+             << list[i].price << endl;
+    }
+
+    cout << endl;
 }
