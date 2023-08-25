@@ -51,17 +51,18 @@ void addTire(TireData list[], int &count)
     cout << "Enter the Style: ";
     cin.getline(style, STRLEN, '\n');
     choosePosition(position);
-    cout << position << endl;
     strcpy(prompt, "Tire Width: ");
     getInt(prompt, width);
     strcpy(prompt, "Tire Ratio: ");
     getInt(prompt, ratio);
     strcpy(prompt, "Tire Diameter: ");
     getInt(prompt, diameter);
-    strcpy(prompt, "Cost: ");
+    strcpy(prompt, "Price: ");
     getDouble(prompt, price);
     tireSizeBuilder(position, width, ratio, diameter);
-
+    addToList(list, count, position, brand, style, price);
+    // cout << fixed << setprecision(2);
+    // cout << position << ";" << brand << ";" << style << ";" << price << endl;
     system("pause");
     cout << endl;
 }
@@ -109,4 +110,13 @@ void tireSizeBuilder(char position[], int width, int ratio, int diameter)
     strcat(position, "-");
     sprintf(buffer, "%d", diameter);
     strcat(position, buffer);
+}
+
+void addToList(TireData list[], int &count, char position[], char brand[], char style[], double price)
+{
+    strcpy(list[count].brand, brand);
+    strcpy(list[count].style, style);
+    strcpy(list[count].dimensions, position);
+    list[count].price = price;
+    count++;
 }

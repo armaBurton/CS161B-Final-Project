@@ -9,7 +9,6 @@ int main()
     {
         return 0;
     }
-    cout << list[0].brand << endl;
 
     greeting();
 
