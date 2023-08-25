@@ -30,13 +30,27 @@ void readOption(char *option)
 
 void runOption(TireData list[], int &count, char *option)
 {
+    int index = 0;
+    char prompt[STRLEN];
     switch (*option)
     {
     case 'a':
         addTire(list, count);
         break;
     case 'r':
-        cout << "option R" << endl;
+        writeToConsole(list, count);
+        strcpy(prompt, "Enter an index to remove: ");
+        getInt(prompt, index);
+        if (index > 0 && index <= count)
+        {
+            index--;
+            removeData(list, count, index);
+            writeToFile(list, count);
+        }
+        else
+        {
+            cout << "Invalid Index\n\n";
+        }
         break;
     case 'p':
         writeToConsole(list, count);

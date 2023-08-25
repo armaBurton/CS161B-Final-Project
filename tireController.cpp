@@ -35,7 +35,6 @@ void writeToConsole(TireData list[], int count)
              << list[i].price << endl;
     }
     cout << endl;
-    system("pause");
     cout << endl;
 }
 
@@ -62,7 +61,6 @@ void addTire(TireData list[], int &count)
     tireSizeBuilder(position, width, ratio, diameter);
     addToList(list, count, position, brand, style, price);
 
-    system("pause");
     cout << endl;
 }
 
@@ -176,6 +174,14 @@ void findBrand(TireData list[], int count)
     {
         notFound(findBrand);
     }
+}
 
-    system("pause");
+void removeData(TireData list[], int &count, int index)
+{
+    for (int i = index; i < count; i++)
+    {
+        list[i] = list[i + 1];
+    }
+    count--;
+    // writeToFile(list, count);
 }

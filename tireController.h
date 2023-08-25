@@ -32,3 +32,4 @@ void addToList(TireData list[], int &count, char position[], char brand[], char 
 void findMin(TireData list[], int count);
 void findMax(TireData list[], int count);
 void findBrand(TireData list[], int count);
+void removeData(TireData list[], int &count, int index);
