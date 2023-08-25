@@ -93,3 +93,23 @@ void getDouble(char prompt[], double &number)
     number = numberBuffer;
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
 }
+
+void writeToFile(TireData list[], int count)
+{
+    ofstream outFile("tires.txt");
+    if (!outFile.is_open())
+    {
+        cout << "Error opening file." << endl;
+        return;
+    }
+
+    for (int i = 0; i < count; i++)
+    {
+        outFile << list[i].dimensions << ";"
+                << list[i].brand << ";"
+                << list[i].style << ";"
+                << list[i].price << endl;
+    }
+
+    outFile.close();
+}

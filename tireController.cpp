@@ -61,8 +61,7 @@ void addTire(TireData list[], int &count)
     getDouble(prompt, price);
     tireSizeBuilder(position, width, ratio, diameter);
     addToList(list, count, position, brand, style, price);
-    // cout << fixed << setprecision(2);
-    // cout << position << ";" << brand << ";" << style << ";" << price << endl;
+
     system("pause");
     cout << endl;
 }
@@ -114,9 +113,11 @@ void tireSizeBuilder(char position[], int width, int ratio, int diameter)
 
 void addToList(TireData list[], int &count, char position[], char brand[], char style[], double price)
 {
+    cout << fixed << setprecision(2);
     strcpy(list[count].brand, brand);
     strcpy(list[count].style, style);
     strcpy(list[count].dimensions, position);
     list[count].price = price;
     count++;
+    writeToFile(list, count);
 }
