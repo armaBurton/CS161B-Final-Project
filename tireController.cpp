@@ -174,7 +174,7 @@ void findBrand(TireData list[], int count)
     }
     if (found == false)
     {
-        cout << "Target brand " << findBrand << " was not found.\n\n";
+        notFound(findBrand);
     }
 
     system("pause");

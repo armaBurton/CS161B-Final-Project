@@ -122,3 +122,8 @@ void printIndex(TireData listItem)
          << listItem.price << endl
          << endl;
 }
+
+void notFound(char brand[])
+{
+    cout << "Target brand \x1b[48;5;242m " << brand << " \x1B[0m was not found.\n\n";
+}
