@@ -15,8 +15,8 @@ void menu()
          << "(R)emove\n"
          << "(P)rint\n"
          << "(F)ind\n"
-         << "(-)Min\n"
-         << "(+)Max\n"
+         << "(-)Min Price\n"
+         << "(+)Max Price\n"
          << "(Q)uit\n\n";
 }
 
@@ -45,7 +45,7 @@ void runOption(TireData list[], int &count, char *option)
         cout << "option F" << endl;
         break;
     case '-':
-        cout << "option -" << endl;
+        findMin(list, count);
         break;
     case '+':
         cout << "option +" << endl;
@@ -112,4 +112,12 @@ void writeToFile(TireData list[], int count)
     }
 
     outFile.close();
+}
+
+void printIndex(TireData listItem)
+{
+    cout << listItem.dimensions << ";"
+         << listItem.brand << ";"
+         << listItem.style << ";"
+         << listItem.price << endl;
 }
