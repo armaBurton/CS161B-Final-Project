@@ -155,3 +155,27 @@ void findMax(TireData list[], int count)
 
     printIndex(list[index]);
 }
+
+void findBrand(TireData list[], int count)
+{
+    char findBrand[STRLEN];
+    bool found = false;
+
+    cout << "Enter the name of the brand you are searching for: ";
+    cin.getline(findBrand, STRLEN, '\n');
+    cout << endl;
+    for (int i = 0; i < count; i++)
+    {
+        if (strcmp(findBrand, list[i].brand) == 0)
+        {
+            printIndex(list[i]);
+            found = true;
+        }
+    }
+    if (found == false)
+    {
+        cout << "Target brand " << findBrand << " was not found.\n\n";
+    }
+
+    system("pause");
+}

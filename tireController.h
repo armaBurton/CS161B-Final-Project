@@ -31,3 +31,4 @@ void tireSizeBuilder(char tireSize[], int width, int ratio, int diameter);
 void addToList(TireData list[], int &count, char position[], char brand[], char style[], double price);
 void findMin(TireData list[], int count);
 void findMax(TireData list[], int count);
+void findBrand(TireData list[], int count);
