@@ -48,7 +48,7 @@ void runOption(TireData list[], int &count, char *option)
         findMin(list, count);
         break;
     case '+':
-        cout << "option +" << endl;
+        findMax(list, count);
         break;
     case 'q':
         cout << "option Q" << endl;
