@@ -138,3 +138,20 @@ void findMin(TireData list[], int count)
 
     printIndex(list[index]);
 }
+
+void findMax(TireData list[], int count)
+{
+    double tempMin = list[0].price;
+    int index;
+
+    for (int i = 0; i < count; i++)
+    {
+        if (tempMin < list[i].price)
+        {
+            tempMin = list[i].price;
+            index = i;
+        }
+    }
+
+    printIndex(list[index]);
+}
