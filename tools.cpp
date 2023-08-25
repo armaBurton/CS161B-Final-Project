@@ -51,7 +51,7 @@ void runOption(TireData list[], int &count, char *option)
         findMax(list, count);
         break;
     case 'q':
-        cout << "option Q" << endl;
+        cout << "Thank you for using Tire Tracker 2000!" << endl;
         break;
     default:
         cout << "You dun fucked up." << endl;
