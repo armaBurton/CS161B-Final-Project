@@ -2,4 +2,4 @@ Front 80/100-21 VE39;IRC Tires;Enduro VE-39 Front Tires;80.76
 Rear 110/100-18 64M;CST;CST Surge P C7220 Sand Tires;85.55
 Rear 140/80-18 70S;Dunlop;Trailmax Raid Tires;220.22
 Front 80/100-21;Pirelli;Scorpion MXS Soft Tires;75.58
-Rear 120/90-18 Kenda K77F/K778 Knarly Tires;115.72
+Rear 120/90-18;Kenda;K77F/K778 Knarly Tires;115.72
