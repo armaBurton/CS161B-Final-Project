@@ -22,7 +22,6 @@ struct TireData
     double price;
 };
 
-bool loadData(TireData list[], int &count);
 void writeToConsole(TireData list[], int count);
 void addTire(TireData list[], int &count);
 void choosePosition(char position[]);

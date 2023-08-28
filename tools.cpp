@@ -1,6 +1,37 @@
 #include "tools.h"
 
 /*
+  Name:   loadData()
+  Desc:   reads data from "tires.txt" and stores them in
+          an TireData array
+  input:  "tires.txt"
+  output: text
+  return: bool
+*/
+bool loadData(TireData list[], int &count)
+{
+    ifstream infile;
+    infile.open("tires.txt");
+    if (!infile)
+    {
+        cout << "File did not open. Program exiting.\n";
+        return false;
+    }
+
+    while (infile.getline(list[count].dimensions, MAXLEN, ';'))
+    {
+        infile.getline(list[count].brand, MAXLEN, ';');
+        infile.getline(list[count].style, MAXLEN, ';');
+        infile >> list[count].price;
+        infile.ignore(5, '\n');
+        count++;
+    }
+    infile.close();
+
+    return true;
+}
+
+/*
   Name:   greeting()
   Desc:   greets the user
   input:  none

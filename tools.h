@@ -4,6 +4,7 @@
 
 const int LIST = 40;
 
+bool loadData(TireData list[], int &count);
 void greeting();
 void menu();
 void readOption(char *option);
