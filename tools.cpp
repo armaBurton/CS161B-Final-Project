@@ -1,5 +1,12 @@
 #include "tools.h"
 
+/*
+  Name:   greeting()
+  Desc:   greets the user
+  input:  none
+  output: text
+  return: none
+*/
 void greeting()
 {
     cout << "\nTire Tracker 2000" << endl;
@@ -8,6 +15,13 @@ void greeting()
          << "and cost.\n\n";
 }
 
+/*
+  Name:   menu()
+  Desc:   display the menu
+  input:  none
+  output: text
+  return: none
+*/
 void menu()
 {
     cout << "TT2K menu:\n\n"
@@ -20,6 +34,13 @@ void menu()
          << "(Q)uit\n\n";
 }
 
+/*
+  Name:   readOption()
+  Desc:   reads the menu option from the user
+  input:  char { inputBuffer }
+  output: text
+  return: none
+*/
 void readOption(char *option)
 {
     char inputBuffer;
@@ -28,6 +49,13 @@ void readOption(char *option)
     option[0] = tolower(inputBuffer);
 }
 
+/*
+  Name:   runOption()
+  Desc:   controller, calls functions based on user menu inputs.
+  input:  none
+  output: text
+  return: none
+*/
 void runOption(TireData list[], int &count, char *option)
 {
     int index = 0;
@@ -68,11 +96,18 @@ void runOption(TireData list[], int &count, char *option)
         cout << "Thank you for using Tire Tracker 2000!" << endl;
         break;
     default:
-        cout << "You dun fucked up." << endl;
+        cout << "Invalid entry." << endl;
         break;
     }
 }
 
+/*
+  Name:   getInt()
+  Desc:   reads integer from the user, provides data validation
+  input:  int { numberBuffer }
+  output: text
+  return: none
+*/
 void getInt(char prompt[], int &number)
 {
     int numberBuffer;
@@ -90,6 +125,13 @@ void getInt(char prompt[], int &number)
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
 }
 
+/*
+  Name:   getDouble()
+  Desc:   reads double from the user, provides data validation
+  input:  double { numberBuffer }
+  output: text
+  return: none
+*/
 void getDouble(char prompt[], double &number)
 {
     double numberBuffer;
@@ -108,6 +150,13 @@ void getDouble(char prompt[], double &number)
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
 }
 
+/*
+  Name:   writeToFile()
+  Desc:   writes TireData to "tires.txt"
+  input:  none
+  output: text
+  return: none
+*/
 void writeToFile(TireData list[], int count)
 {
     ofstream outFile("tires.txt");
@@ -128,6 +177,13 @@ void writeToFile(TireData list[], int count)
     outFile.close();
 }
 
+/*
+  Name:   printIndex()
+  Desc:   prints a specific TireData line item.
+  input:  none
+  output: TireData
+  return: none
+*/
 void printIndex(TireData listItem)
 {
     cout << listItem.dimensions << ";"
@@ -137,6 +193,13 @@ void printIndex(TireData listItem)
          << endl;
 }
 
+/*
+  Name:   notFound()
+  Desc:   Prompts the user that queried brand was not found.
+  input:  none
+  output: text
+  return: none
+*/
 void notFound(char brand[])
 {
     cout << "Target brand \x1b[48;5;242m " << brand << " \x1B[0m was not found.\n\n";
