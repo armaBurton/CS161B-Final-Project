@@ -13,4 +13,3 @@ void getDouble(char prompt[], double &number);
 void writeToFile(TireData list[], int count);
 void printIndex(TireData listItem);
 void notFound(char brand[]);
-// void readPosition(char position[]);

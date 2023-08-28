@@ -233,15 +233,27 @@ void findMax(TireData list[], int count)
 */
 void findBrand(TireData list[], int count)
 {
-    char findBrand[STRLEN];
+    char findBrand[STRLEN], tempBrand[STRLEN];
     bool found = false;
 
     cout << "Enter the name of the brand you are searching for: ";
     cin.getline(findBrand, STRLEN, '\n');
+
+    for (int i = 0; findBrand[i]; i++)
+    {
+        findBrand[i] = tolower(findBrand[i]);
+    }
     cout << endl;
     for (int i = 0; i < count; i++)
     {
-        if (strcmp(findBrand, list[i].brand) == 0)
+        strcpy(tempBrand, list[i].brand);
+        {
+            for (int i = 0; tempBrand[i]; i++)
+            {
+                tempBrand[i] = tolower(tempBrand[i]);
+            }
+        }
+        if (strcmp(findBrand, tempBrand) == 0)
         {
             printIndex(list[i]);
             found = true;
