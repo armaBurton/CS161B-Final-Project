@@ -2,28 +2,6 @@
 #include "tireController.h"
 
 /*
-  Name:   writeToConsole()
-  Desc:   writes all the data from the TireData array and
-          display it to the console using ";" as a separator
-  input:  none
-  output: TireData
-  return: none
-*/
-void writeToConsole(TireData list[], int count)
-{
-    for (int i = 0; i < count; i++)
-    {
-        cout << "0" << i + 1 << ": "
-             << list[i].dimensions << ";"
-             << list[i].brand << ";"
-             << list[i].style << ";"
-             << list[i].price << endl;
-    }
-    cout << endl;
-    cout << endl;
-}
-
-/*
   Name:   addTire()
   Desc:   collects tire data from the user to create a new entry
           in the TireData array
