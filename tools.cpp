@@ -115,10 +115,10 @@ void runOption(TireData list[], int &count, char *option)
     char prompt[STRLEN];
     switch (*option)
     {
-    case 'a':
+    case 'a': // add
         addTire(list, count);
         break;
-    case 'r':
+    case 'r': // remove
         writeToConsole(list, count);
         strcpy(prompt, "Enter an index to remove: ");
         getInt(prompt, index);
@@ -133,22 +133,22 @@ void runOption(TireData list[], int &count, char *option)
             cout << "Invalid Index\n\n";
         }
         break;
-    case 'p':
+    case 'p': // print
         writeToConsole(list, count);
         break;
-    case 'f':
+    case 'f': // find
         findBrand(list, count);
         break;
-    case '-':
+    case '-': // min
         findMin(list, count);
         break;
-    case '+':
+    case '+': // max
         findMax(list, count);
         break;
-    case 'q':
+    case 'q': // quit
         cout << "Thank you for using Tire Tracker 2000!" << endl;
         break;
-    default:
+    default: // error
         cout << "Invalid entry." << endl;
         break;
     }
